@@ -24,7 +24,7 @@ A modern React TypeScript frontend application built with Vite, featuring authen
 
 1. Navigate to the frontend directory:
 ```bash
-cd frontend
+cd easygenerator-auth-frontend
 ```
 
 2. Install dependencies:
