@@ -34,12 +34,12 @@ export const useSignin = () => {
       setIsLoading(true);
       try {
         const response = await authAPI.signin(data);
-        const { token, user, expiration } = response;
+        const { token, user, expiresIn } = response;
 
         // cookies
-        Cookies.set(COOKIE_KEYS.TOKEN, token, { expires: Number(expiration) });
+        Cookies.set(COOKIE_KEYS.TOKEN, token, { expires: Number(expiresIn) });
         Cookies.set(COOKIE_KEYS.USERNAME, JSON.stringify(user), {
-          expires: Number(expiration),
+          expires: Number(expiresIn),
         });
 
         dispatch(UpdateUserData({ token, user }));

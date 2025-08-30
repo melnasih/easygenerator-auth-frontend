@@ -8,7 +8,7 @@ export interface AuthResponse {
   message: string;
   token: string;
   user: User;
-  expiration: string;
+  expiresIn: string;
 }
 
 export interface SignupData {
