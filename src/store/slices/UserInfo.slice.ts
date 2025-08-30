@@ -9,8 +9,8 @@ interface UserInfoState {
 }
 
 type UserPayload = {
-  user: User;
-  token: string;
+  user: User | null;
+  token: string | null;
 };
 
 const initialState: UserInfoState = {

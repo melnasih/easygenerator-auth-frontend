@@ -28,7 +28,7 @@ export const useDashboard = () => {
     Cookies.remove(COOKIE_KEYS.USERNAME);
     // clear redux state
     const token: string | null = null;
-    const user: string | null = null;
+    const user: User | null = null;
 
     const payload: UserDataPayload = { token, user };
     dispatch(UpdateUserData(payload));

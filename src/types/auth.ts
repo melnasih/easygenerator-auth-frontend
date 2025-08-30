@@ -25,5 +25,5 @@ export interface SigninData {
 
 export interface UserDataPayload {
   token: string | null;
-  user: string | null;
+  user: User | null;
 }
