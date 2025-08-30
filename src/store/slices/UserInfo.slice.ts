@@ -1,21 +1,36 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { User } from "../../types/auth";
+
+interface UserInfoState {
+  UserData: {
+    user: User | null;
+    token: string | null;
+  };
+}
+
+type UserPayload = {
+  user: User;
+  token: string;
+};
+
+const initialState: UserInfoState = {
+  UserData: {
+    user: null,
+    token: null,
+  },
+};
 
 const UserInfo = createSlice({
     name: "CurrentUserData",
-    initialState: {
-        UserData: {
-            user: '',
-            token: '',
-        },
-    },
+    initialState,
     reducers: {
-        UpdateUserData(state, action) {
+        UpdateUserData(state, action: PayloadAction<UserPayload>) {
             state.UserData = action.payload;
         },
         RemoveUserData: (state) => {
             state.UserData = {
-                user: '',
-                token: ''
+                user: null,
+                token: null
             };
         },
     }
